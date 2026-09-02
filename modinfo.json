@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "anglerscatch",
+  "name": "The Angler's Catch",
+  "authors": [ "DinnerTime" ],
+  "description": "Introduces fish length, weight, meat scaling and visual scaling",
+  "version": "1.2.0",
+  "dependencies": {
+    "game": "1.22.0"
+  }
+}

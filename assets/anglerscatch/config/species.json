@@ -1,0 +1,450 @@
+{
+    "alewife-shad": {
+        "SpeciesCode": "alewife-shad",
+        "DisplayName": "Shad Alewife",
+        "MinSizeCm": 10.0,
+        "MaxSizeCm": 30.0,
+        "MinWeightKg": 0.05,
+        "MaxWeightKg": 0.45
+    },
+    "chub-river": {
+        "SpeciesCode": "chub-river",
+        "DisplayName": "River Chub",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 45.0,
+        "MinWeightKg": 0.1,
+        "MaxWeightKg": 1.2
+    },
+    "crappie-black": {
+        "SpeciesCode": "crappie-black",
+        "DisplayName": "Black Crappie",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 38.0,
+        "MinWeightKg": 0.12,
+        "MaxWeightKg": 1.8
+    },
+    "crappie-white": {
+        "SpeciesCode": "crappie-white",
+        "DisplayName": "White Crappie",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 42.0,
+        "MinWeightKg": 0.12,
+        "MaxWeightKg": 2.3
+    },
+    "perch-european": {
+        "SpeciesCode": "perch-european",
+        "DisplayName": "European Perch",
+        "MinSizeCm": 20.0,
+        "MaxSizeCm": 50.0,
+        "MinWeightKg": 0.2,
+        "MaxWeightKg": 2.8
+    },
+    "perch-yellow": {
+        "SpeciesCode": "perch-yellow",
+        "DisplayName": "Yellow Perch",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 35.0,
+        "MinWeightKg": 0.1,
+        "MaxWeightKg": 1.1
+    },
+    "piranha-black": {
+        "SpeciesCode": "piranha-black",
+        "DisplayName": "Black Piranha",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 45.0,
+        "MinWeightKg": 0.2,
+        "MaxWeightKg": 3.5
+    },
+    "piranha-red": {
+        "SpeciesCode": "piranha-red",
+        "DisplayName": "Red-Bellied Piranha",
+        "MinSizeCm": 12.0,
+        "MaxSizeCm": 33.0,
+        "MinWeightKg": 0.15,
+        "MaxWeightKg": 1.9
+    },
+    "trout-brown": {
+        "SpeciesCode": "trout-brown",
+        "DisplayName": "Brown Trout",
+        "MinSizeCm": 25.0,
+        "MaxSizeCm": 90.0,
+        "MinWeightKg": 0.3,
+        "MaxWeightKg": 9.5
+    },
+    "trout-rainbow": {
+        "SpeciesCode": "trout-rainbow",
+        "DisplayName": "Rainbow Trout",
+        "MinSizeCm": 30.0,
+        "MaxSizeCm": 100.0,
+        "MinWeightKg": 0.4,
+        "MaxWeightKg": 12.0
+    },
+    "bass-largemouth": {
+        "SpeciesCode": "bass-largemouth",
+        "DisplayName": "Largemouth Bass",
+        "MinSizeCm": 25.0,
+        "MaxSizeCm": 75.0,
+        "MinWeightKg": 0.35,
+        "MaxWeightKg": 10.1
+    },
+    "bass-smallmouth": {
+        "SpeciesCode": "bass-smallmouth",
+        "DisplayName": "Smallmouth Bass",
+        "MinSizeCm": 20.0,
+        "MaxSizeCm": 60.0,
+        "MinWeightKg": 0.25,
+        "MaxWeightKg": 5.4
+    },
+    "carp-common": {
+        "SpeciesCode": "carp-common",
+        "DisplayName": "Common Carp",
+        "MinSizeCm": 35.0,
+        "MaxSizeCm": 110.0,
+        "MinWeightKg": 0.8,
+        "MaxWeightKg": 22.0
+    },
+    "carp-grass": {
+        "SpeciesCode": "carp-grass",
+        "DisplayName": "Grass Carp",
+        "MinSizeCm": 40.0,
+        "MaxSizeCm": 130.0,
+        "MinWeightKg": 1.0,
+        "MaxWeightKg": 35.0
+    },
+    "catfish-blue": {
+        "SpeciesCode": "catfish-blue",
+        "DisplayName": "Blue Catfish",
+        "MinSizeCm": 50.0,
+        "MaxSizeCm": 165.0,
+        "MinWeightKg": 1.8,
+        "MaxWeightKg": 65.0
+    },
+    "catfish-channel": {
+        "SpeciesCode": "catfish-channel",
+        "DisplayName": "Channel Catfish",
+        "MinSizeCm": 30.0,
+        "MaxSizeCm": 110.0,
+        "MinWeightKg": 0.5,
+        "MaxWeightKg": 23.0
+    },
+    "pickerel-chain": {
+        "SpeciesCode": "pickerel-chain",
+        "DisplayName": "Chain Pickerel",
+        "MinSizeCm": 25.0,
+        "MaxSizeCm": 75.0,
+        "MinWeightKg": 0.25,
+        "MaxWeightKg": 4.2
+    },
+    "salmon-coho": {
+        "SpeciesCode": "salmon-coho",
+        "DisplayName": "Coho Salmon",
+        "MinSizeCm": 45.0,
+        "MaxSizeCm": 100.0,
+        "MinWeightKg": 1.2,
+        "MaxWeightKg": 15.2
+    },
+    "tilapia-nile": {
+        "SpeciesCode": "tilapia-nile",
+        "DisplayName": "Nile Tilapia",
+        "MinSizeCm": 20.0,
+        "MaxSizeCm": 60.0,
+        "MinWeightKg": 0.25,
+        "MaxWeightKg": 4.3
+    },
+    "tilapia-red": {
+        "SpeciesCode": "tilapia-red",
+        "DisplayName": "Red Tilapia",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 40.0,
+        "MinWeightKg": 0.15,
+        "MaxWeightKg": 2.1
+    },
+    "walleye-common": {
+        "SpeciesCode": "walleye-common",
+        "DisplayName": "Common Walleye",
+        "MinSizeCm": 25.0,
+        "MaxSizeCm": 85.0,
+        "MinWeightKg": 0.3,
+        "MaxWeightKg": 11.3
+    },
+    "pike-northern": {
+        "SpeciesCode": "pike-northern",
+        "DisplayName": "Northern Pike",
+        "MinSizeCm": 40.0,
+        "MaxSizeCm": 135.0,
+        "MinWeightKg": 0.9,
+        "MaxWeightKg": 28.0
+    },
+    "arapaima-arapaima": {
+        "SpeciesCode": "arapaima-arapaima",
+        "DisplayName": "Arapaima",
+        "MinSizeCm": 90.0,
+        "MaxSizeCm": 270.0,
+        "MinWeightKg": 12.0,
+        "MaxWeightKg": 180.0
+    },
+    "arapaima-gigas": {
+        "SpeciesCode": "arapaima-gigas",
+        "DisplayName": "Gigantic Arapaima",
+        "MinSizeCm": 110.0,
+        "MaxSizeCm": 320.0,
+        "MinWeightKg": 20.0,
+        "MaxWeightKg": 250.0
+    },
+    "sheatfish-black": {
+        "SpeciesCode": "sheatfish-black",
+        "DisplayName": "Black Wels Catfish",
+        "MinSizeCm": 70.0,
+        "MaxSizeCm": 220.0,
+        "MinWeightKg": 4.5,
+        "MaxWeightKg": 110.0
+    },
+    "sheatfish-white": {
+        "SpeciesCode": "sheatfish-white",
+        "DisplayName": "White Wels Catfish",
+        "MinSizeCm": 60.0,
+        "MaxSizeCm": 180.0,
+        "MinWeightKg": 3.0,
+        "MaxWeightKg": 75.0
+    },
+    "bream-sea": {
+        "SpeciesCode": "bream-sea",
+        "DisplayName": "Sea Bream",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 50.0,
+        "MinWeightKg": 0.15,
+        "MaxWeightKg": 3.2
+    },
+    "gurnard-cape": {
+        "SpeciesCode": "gurnard-cape",
+        "DisplayName": "Cape Gurnard",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 45.0,
+        "MinWeightKg": 0.12,
+        "MaxWeightKg": 2.1
+    },
+    "haddock-common": {
+        "SpeciesCode": "haddock-common",
+        "DisplayName": "Common Haddock",
+        "MinSizeCm": 30.0,
+        "MaxSizeCm": 90.0,
+        "MinWeightKg": 0.4,
+        "MaxWeightKg": 11.0
+    },
+    "hake-silver": {
+        "SpeciesCode": "hake-silver",
+        "DisplayName": "Silver Hake",
+        "MinSizeCm": 25.0,
+        "MaxSizeCm": 70.0,
+        "MinWeightKg": 0.25,
+        "MaxWeightKg": 5.0
+    },
+    "herring-atlantic": {
+        "SpeciesCode": "herring-atlantic",
+        "DisplayName": "Atlantic Herring",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 45.0,
+        "MinWeightKg": 0.1,
+        "MaxWeightKg": 1.1
+    },
+    "mackerel-atlantic": {
+        "SpeciesCode": "mackerel-atlantic",
+        "DisplayName": "Atlantic Mackerel",
+        "MinSizeCm": 20.0,
+        "MaxSizeCm": 55.0,
+        "MinWeightKg": 0.18,
+        "MaxWeightKg": 2.2
+    },
+    "pollock-alaska": {
+        "SpeciesCode": "pollock-alaska",
+        "DisplayName": "Alaska Pollock",
+        "MinSizeCm": 25.0,
+        "MaxSizeCm": 80.0,
+        "MinWeightKg": 0.3,
+        "MaxWeightKg": 9.0
+    },
+    "perch-pacific": {
+        "SpeciesCode": "perch-pacific",
+        "DisplayName": "Pacific Ocean Perch",
+        "MinSizeCm": 20.0,
+        "MaxSizeCm": 50.0,
+        "MinWeightKg": 0.25,
+        "MaxWeightKg": 3.5
+    },
+    "barracuda-great": {
+        "SpeciesCode": "barracuda-great",
+        "DisplayName": "Great Barracuda",
+        "MinSizeCm": 60.0,
+        "MaxSizeCm": 180.0,
+        "MinWeightKg": 2.0,
+        "MaxWeightKg": 45.0
+    },
+    "grouper-black": {
+        "SpeciesCode": "grouper-black",
+        "DisplayName": "Black Grouper",
+        "MinSizeCm": 45.0,
+        "MaxSizeCm": 160.0,
+        "MinWeightKg": 1.5,
+        "MaxWeightKg": 80.0
+    },
+    "salmon-pink": {
+        "SpeciesCode": "salmon-pink",
+        "DisplayName": "Pink Salmon",
+        "MinSizeCm": 35.0,
+        "MaxSizeCm": 75.0,
+        "MinWeightKg": 0.8,
+        "MaxWeightKg": 6.5
+    },
+    "snapper-red": {
+        "SpeciesCode": "snapper-red",
+        "DisplayName": "Red Snapper",
+        "MinSizeCm": 30.0,
+        "MaxSizeCm": 100.0,
+        "MinWeightKg": 0.5,
+        "MaxWeightKg": 17.5
+    },
+    "tuna-skipjack": {
+        "SpeciesCode": "tuna-skipjack",
+        "DisplayName": "Skipjack Tuna",
+        "MinSizeCm": 40.0,
+        "MaxSizeCm": 110.0,
+        "MinWeightKg": 1.1,
+        "MaxWeightKg": 34.0
+    },
+    "wolf-bering": {
+        "SpeciesCode": "wolf-bering",
+        "DisplayName": "Bering Wolfish",
+        "MinSizeCm": 40.0,
+        "MaxSizeCm": 130.0,
+        "MinWeightKg": 0.9,
+        "MaxWeightKg": 18.0
+    },
+    "amberjack-yellowtail": {
+        "SpeciesCode": "amberjack-yellowtail",
+        "DisplayName": "Yellowtail Amberjack",
+        "MinSizeCm": 45.0,
+        "MaxSizeCm": 150.0,
+        "MinWeightKg": 1.2,
+        "MaxWeightKg": 42.0
+    },
+    "mahi-mahi-common": {
+        "SpeciesCode": "mahi-mahi-common",
+        "DisplayName": "Common Mahi-Mahi",
+        "MinSizeCm": 50.0,
+        "MaxSizeCm": 140.0,
+        "MinWeightKg": 1.5,
+        "MaxWeightKg": 30.0
+    },
+    "wreckfish-atlantic": {
+        "SpeciesCode": "wreckfish-atlantic",
+        "DisplayName": "Atlantic Wreckfish",
+        "MinSizeCm": 40.0,
+        "MaxSizeCm": 130.0,
+        "MinWeightKg": 1.1,
+        "MaxWeightKg": 45.0
+    },
+    "coelacanth-common": {
+        "SpeciesCode": "coelacanth-common",
+        "DisplayName": "Coelacanth",
+        "MinSizeCm": 80.0,
+        "MaxSizeCm": 200.0,
+        "MinWeightKg": 10.0,
+        "MaxWeightKg": 95.0
+    },
+    "sturgeon-atlantic": {
+        "SpeciesCode": "sturgeon-atlantic",
+        "DisplayName": "Atlantic Sturgeon",
+        "MinSizeCm": 100.0,
+        "MaxSizeCm": 350.0,
+        "MinWeightKg": 15.0,
+        "MaxWeightKg": 360.0
+    },
+    "angel-bicolor": {
+        "SpeciesCode": "angel-bicolor",
+        "DisplayName": "Bicolor Angelfish",
+        "MinSizeCm": 8.0,
+        "MaxSizeCm": 15.0,
+        "MinWeightKg": 0.03,
+        "MaxWeightKg": 0.15
+    },
+    "butterfly-copperband": {
+        "SpeciesCode": "butterfly-copperband",
+        "DisplayName": "Copperband Butterflyfish",
+        "MinSizeCm": 10.0,
+        "MaxSizeCm": 20.0,
+        "MinWeightKg": 0.05,
+        "MaxWeightKg": 0.25
+    },
+    "butterfly-blackwedged": {
+        "SpeciesCode": "butterfly-blackwedged",
+        "DisplayName": "Blackwedged Butterflyfish",
+        "MinSizeCm": 8.0,
+        "MaxSizeCm": 18.0,
+        "MinWeightKg": 0.04,
+        "MaxWeightKg": 0.2
+    },
+    "clown-black": {
+        "SpeciesCode": "clown-black",
+        "DisplayName": "Black Clownfish",
+        "MinSizeCm": 6.0,
+        "MaxSizeCm": 12.0,
+        "MinWeightKg": 0.02,
+        "MaxWeightKg": 0.1
+    },
+    "clown-common": {
+        "SpeciesCode": "clown-common",
+        "DisplayName": "Ocellaris Clownfish",
+        "MinSizeCm": 5.0,
+        "MaxSizeCm": 11.0,
+        "MinWeightKg": 0.01,
+        "MaxWeightKg": 0.08
+    },
+    "clown-yellowstripe": {
+        "SpeciesCode": "clown-yellowstripe",
+        "DisplayName": "Yellowstripe Maroon Clownfish",
+        "MinSizeCm": 7.0,
+        "MaxSizeCm": 16.0,
+        "MinWeightKg": 0.03,
+        "MaxWeightKg": 0.18
+    },
+    "puffer-longspine": {
+        "SpeciesCode": "puffer-longspine",
+        "DisplayName": "Longspine Porcupinefish",
+        "MinSizeCm": 15.0,
+        "MaxSizeCm": 50.0,
+        "MinWeightKg": 0.15,
+        "MaxWeightKg": 2.8
+    },
+    "tang-banded": {
+        "SpeciesCode": "tang-banded",
+        "DisplayName": "Banded Surgeonfish",
+        "MinSizeCm": 12.0,
+        "MaxSizeCm": 30.0,
+        "MinWeightKg": 0.08,
+        "MaxWeightKg": 0.6
+    },
+    "tang-powderblue": {
+        "SpeciesCode": "tang-powderblue",
+        "DisplayName": "Powder Blue Tang",
+        "MinSizeCm": 12.0,
+        "MaxSizeCm": 25.0,
+        "MinWeightKg": 0.08,
+        "MaxWeightKg": 0.45
+    },
+    "trigger-titan": {
+        "SpeciesCode": "trigger-titan",
+        "DisplayName": "Titan Triggerfish",
+        "MinSizeCm": 20.0,
+        "MaxSizeCm": 75.0,
+        "MinWeightKg": 0.3,
+        "MaxWeightKg": 8.5
+    },
+    "wrasse-creole": {
+        "SpeciesCode": "wrasse-creole",
+        "DisplayName": "Creole Wrasse",
+        "MinSizeCm": 10.0,
+        "MaxSizeCm": 30.0,
+        "MinWeightKg": 0.05,
+        "MaxWeightKg": 0.5
+    }
+}

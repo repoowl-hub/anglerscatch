@@ -1,0 +1,8 @@
+{
+  "anglerscatch:tooltip-size-normal": "Length: <font color=\"#68d8d6\">{0} cm</font>",
+  "anglerscatch:tooltip-size-trophy": "Length: <font color=\"#ffd700\">{0} cm Trophy Fish</font>",
+  "anglerscatch:tooltip-weight": "Weight: <font color=\"#a2d2ff\">{0} kg</font>",
+  "anglerscatch:taxidermy-length": " - Length: {0}cm",
+  "anglerscatch:tooltip-meat-yield": "<font color=\"#88ff88\">Meat Yield: {0}{1}%</font>",
+  "anglerscatch:tooltip-caught-by": "Caught by: <font color=\"#ffb703\">{0}</font>"
+}
