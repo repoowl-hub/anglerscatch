@@ -106,6 +106,18 @@ namespace AnglersCatch
         }
     }
 
+    [HarmonyPatch(typeof(BlockDropItemStack), "GetNextItemStack")]
+    public class BlockDropItemStackGetNextItemStackPatch
+    {
+        public static void Prefix(ref float dropQuantityMultiplier)
+        {
+            if (FishTransferManager.ActiveFlayingMultiplier > 0f && Math.Abs(FishTransferManager.ActiveFlayingMultiplier - 1f) > 0.001f)
+            {
+                dropQuantityMultiplier *= FishTransferManager.ActiveFlayingMultiplier;
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(ItemSlot), "Itemstack", MethodType.Setter)]
     public class ItemSlotSetterPatch
     {
@@ -152,14 +164,6 @@ namespace AnglersCatch
         {
             if (value?.Collectible == null) return;
 
-            // Apply active flaying size multiplier to newly harvested fillets
-            if (FishTransferManager.ActiveFlayingMultiplier > 1f && 
-                (value.Collectible.Code.Path.StartsWith("fish-") || value.Collectible.Code.Path.StartsWith("fishchunk")))
-            {
-                int scaled = (int)Math.Max(1, Math.Round(value.StackSize * FishTransferManager.ActiveFlayingMultiplier));
-                value.StackSize = scaled;
-            }
-
             if (FishItemBehavior.IsFishCollectible(value.Collectible))
             {
                 IWorldAccessor world = (__instance.Inventory?.Api as ICoreAPI)?.World;
@@ -197,14 +201,6 @@ namespace AnglersCatch
 
             ItemStack stack = __instance.Slot.Itemstack;
             if (stack.Collectible == null) return;
-
-            // Scale dropped fillet items if spawned during ground flaying
-            if (FishTransferManager.ActiveFlayingMultiplier > 1f &&
-                (stack.Collectible.Code.Path.StartsWith("fish-") || stack.Collectible.Code.Path.StartsWith("fishchunk")))
-            {
-                int scaled = (int)Math.Max(1, Math.Round(stack.StackSize * FishTransferManager.ActiveFlayingMultiplier));
-                stack.StackSize = scaled;
-            }
 
             if (FishItemBehavior.IsFishCollectible(stack.Collectible))
             {

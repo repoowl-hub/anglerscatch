@@ -640,18 +640,6 @@ namespace AnglersCatch
                 {
                     dsc.AppendLine(Lang.Get("anglerscatch:tooltip-caught-by", catcherName));
                 }
-
-                // Show dynamic meat yield bonus info in hover tooltip (for raw fish only)
-                if (inSlot.Itemstack.Collectible.Code.Path.StartsWith("fishraw"))
-                {
-                    float multiplier = GetFilletMultiplier(sizeCm, species, isJuvenile);
-                    int meatPercent = (int)Math.Round((multiplier - 1.0f) * 100f);
-                    if (meatPercent != 0)
-                    {
-                        string sign = meatPercent > 0 ? "+" : "";
-                        dsc.AppendLine(Lang.Get("anglerscatch:tooltip-meat-yield", sign, meatPercent));
-                    }
-                }
             }
         }
 
@@ -799,13 +787,13 @@ namespace AnglersCatch
         public static float GetFilletMultiplier(float sizeCm, string species, bool isJuvenile)
         {
             var range = FishSpeciesConfig.GetRange(species, isJuvenile);
-            float sizeRatio = (sizeCm - range.MinSizeCm) / Math.Max(1f, (range.MaxSizeCm - range.MinSizeCm));
-            float multiplier = 0.8f + (sizeRatio * 0.7f);
+            float sizeRatio = Math.Clamp((sizeCm - range.MinSizeCm) / Math.Max(1f, (range.MaxSizeCm - range.MinSizeCm)), 0f, 1f);
+            float multiplier = 0.8f + (sizeRatio * 0.4f);
             if (sizeCm >= range.TrophyThreshold)
             {
-                multiplier *= 1.5f;
+                multiplier += 0.3f;
             }
-            return multiplier;
+            return Math.Clamp(multiplier, 0.5f, 2.0f);
         }
 
         public static string GetSpeciesCode(ItemStack stack)
