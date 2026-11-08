@@ -162,21 +162,10 @@ namespace AnglersCatch
                 });
             }
 
-            if (!string.IsNullOrEmpty(playerUid))
-            {
-                lock (PendingCapturesByPlayer)
-                {
-                    PendingCapturesByPlayer[playerUid] = new FishData
-                    {
-                        Size = size,
-                        Species = species,
-                        PlayerUid = uid,
-                        PlayerName = name,
-                        Pos = pos,
-                        Timestamp = time
-                    };
-                }
-            }
+            // Placement data is only for live fish released into water (TryApplyPlacement).
+            // It must NOT be recorded as a pending capture: right-clicking a block (e.g. a
+            // trotline or fish trap) while holding a fish would otherwise stamp this fish's
+            // size and species onto the next fish item the player receives.
         }
 
         public static bool TryApplyPlacement(Entity entity)
@@ -291,15 +280,19 @@ namespace AnglersCatch
 
         public static bool TryApplyCapture(string playerUid, ItemStack stack)
         {
-            if (stack == null) return false;
+            if (stack?.Collectible?.Code == null) return false;
             long time = Environment.TickCount64;
+
+            // Species of the item receiving the data, derived from its item code (not from any
+            // previously stamped attribute), so a capture can only transfer onto the same fish.
+            string stackSpecies = FishEntityBehavior.ExtractSpeciesFromCode(stack.Collectible.Code.Path);
 
             lock (PendingCapturesByPlayer)
             {
                 FishData entry = null;
                 if (!string.IsNullOrEmpty(playerUid) && PendingCapturesByPlayer.TryGetValue(playerUid, out var pEntry))
                 {
-                    if (time - pEntry.Timestamp <= 20000)
+                    if (time - pEntry.Timestamp <= 20000 && pEntry.Species == stackSpecies)
                     {
                         entry = pEntry;
                     }
@@ -307,7 +300,7 @@ namespace AnglersCatch
 
                 if (entry == null && PendingCapturesByPlayer.TryGetValue("_last_", out var lastEntry))
                 {
-                    if (time - lastEntry.Timestamp <= 20000)
+                    if (time - lastEntry.Timestamp <= 20000 && lastEntry.Species == stackSpecies)
                     {
                         entry = lastEntry;
                     }
@@ -315,6 +308,11 @@ namespace AnglersCatch
 
                 if (entry != null && entry.Size > 0f)
                 {
+                    // One capture belongs to exactly one fish: consume every reference to it
+                    // so it cannot be stamped onto a second fish within the TTL window.
+                    var consumedKeys = PendingCapturesByPlayer.Where(kv => ReferenceEquals(kv.Value, entry)).Select(kv => kv.Key).ToList();
+                    foreach (var key in consumedKeys) PendingCapturesByPlayer.Remove(key);
+
                     stack.Attributes.SetFloat("fishSize", entry.Size);
                     stack.Attributes.SetString("speciesCode", entry.Species);
                     if (!string.IsNullOrEmpty(entry.PlayerUid)) stack.Attributes.SetString("caughtByPlayerUid", entry.PlayerUid);
@@ -675,7 +673,7 @@ namespace AnglersCatch
                 IPlayer player = (slot.Inventory as InventoryBasePlayer)?.Player;
 
                 // Check if this item in slot came from capturing a swimming fish
-                if (player != null && !slot.Itemstack.Attributes.HasAttribute("fishSize"))
+                if (player != null && world?.Side != EnumAppSide.Client && !slot.Itemstack.Attributes.HasAttribute("fishSize"))
                 {
                     FishTransferManager.TryApplyCapture(player.PlayerUID, slot.Itemstack);
                 }
@@ -829,16 +827,17 @@ namespace AnglersCatch
 
             if (sizeCm <= 0f)
             {
+                // Strictly Server-Authoritative: the client never rolls a size, and never consumes a
+                // pending capture (in singleplayer the static capture store is shared with the server).
+                if (world != null && world.Side == EnumAppSide.Client)
+                {
+                    return 0f;
+                }
+
                 // First attempt to retrieve from pending capture transfer (e.g. from pickup/catch)
                 if (FishTransferManager.TryApplyCapture(player?.PlayerUID, stack))
                 {
                     return stack.Attributes.GetFloat("fishSize", 0f);
-                }
-
-                // Strictly Server-Authoritative: Never generate a random size on the client side
-                if (world != null && world.Side == EnumAppSide.Client)
-                {
-                    return 0f;
                 }
 
                 bool isJuvenile = stack.Collectible.Code.Path.EndsWith("juvenile");

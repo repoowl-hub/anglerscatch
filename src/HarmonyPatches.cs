@@ -169,7 +169,7 @@ namespace AnglersCatch
                 IWorldAccessor world = (__instance.Inventory?.Api as ICoreAPI)?.World;
                 IPlayer player = (__instance.Inventory as InventoryBasePlayer)?.Player;
 
-                if (player != null && !value.Attributes.HasAttribute("fishSize"))
+                if (player != null && world?.Side != EnumAppSide.Client && !value.Attributes.HasAttribute("fishSize"))
                 {
                     FishTransferManager.TryApplyCapture(player.PlayerUID, value);
                 }
@@ -255,7 +255,7 @@ namespace AnglersCatch
     {
         public static void Prefix(EntityPlayer __instance, ItemStack itemstack)
         {
-            if (itemstack != null && FishItemBehavior.IsFishCollectible(itemstack.Collectible))
+            if (itemstack != null && __instance?.World?.Side != EnumAppSide.Client && FishItemBehavior.IsFishCollectible(itemstack.Collectible))
             {
                 if (!itemstack.Attributes.HasAttribute("fishSize") || itemstack.Attributes.GetFloat("fishSize", 0f) <= 0f)
                 {
